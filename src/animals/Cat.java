@@ -31,7 +31,8 @@ class Cat implements Animal {
     }
 
     @Autowired
-    public void setFood(CatFood food) {
+    public void doSomething(CatFood food) {
+        System.out.println("Inside of doSomething.");
         this.food = food;
     }
 
