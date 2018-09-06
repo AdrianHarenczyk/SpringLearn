@@ -1,11 +1,14 @@
 package animals;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 class Cat implements Animal {
 
+    @Qualifier("catFood")
+    @Autowired
     private Food food;
 
     public Cat(Food food) {
@@ -26,15 +29,11 @@ class Cat implements Animal {
         System.out.println("Eating yum yum.");
     }
 
-    public Food getFood() {
+    Food getFood() {
         return food;
     }
 
-    @Autowired
-    public void doSomething(CatFood food) {
-        System.out.println("Inside of doSomething.");
+    public void setFood(Food food) {
         this.food = food;
     }
-
-
 }
