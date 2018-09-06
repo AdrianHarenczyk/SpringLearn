@@ -18,12 +18,12 @@ class Cat implements Animal {
 
     @Override
     public void makeASound() {
-
+        System.out.println("meow...");
     }
 
     @Override
     public void eat() {
-
+        System.out.println("Eating yum yum.");
     }
 
     public Food getFood() {

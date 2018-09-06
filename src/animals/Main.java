@@ -11,5 +11,7 @@ public class Main {
         Cat cat = context.getBean("cat", Cat.class);
 
         System.out.println(cat.getFood());
+        cat.eat();
+        cat.makeASound();
     }
 }
