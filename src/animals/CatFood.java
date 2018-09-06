@@ -1,6 +1,5 @@
 package animals;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,7 +11,6 @@ class CatFood implements Food {
         this.name = name;
     }
 
-    @Autowired
     CatFood() {
         this.name = "Plain Cat Food";
     }

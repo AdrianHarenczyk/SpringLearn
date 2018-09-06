@@ -2,12 +2,14 @@ package animals;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+@Scope("prototype")
 @Component
 class Cat implements Animal {
 
-    @Qualifier("catFood")
+    @Qualifier("fishFood")
     @Autowired
     private Food food;
 

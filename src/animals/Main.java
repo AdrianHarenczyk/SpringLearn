@@ -13,5 +13,13 @@ public class Main {
         System.out.println(cat.getFood());
         cat.eat();
         cat.makeASound();
+
+        Cat otherCat = context.getBean("cat", Cat.class);
+
+        System.out.println("Is this cat the same as the other cat? "
+                + "\nThe answer is: " + cat.equals(otherCat));
+
+
+        context.close();
     }
 }
