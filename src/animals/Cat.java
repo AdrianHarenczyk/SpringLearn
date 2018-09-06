@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Scope("prototype")
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
 class Cat implements Animal {
 
@@ -19,6 +21,16 @@ class Cat implements Animal {
 
     public Cat() {
         this.food = new CatFood();
+    }
+
+    @PostConstruct
+    private void init() {
+        System.out.println("Cat creation completed.");
+    }
+
+    @PreDestroy
+    private void destroyCat() {
+        System.out.println("cat is falling to the void...");
     }
 
     @Override
